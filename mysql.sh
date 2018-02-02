@@ -13,8 +13,8 @@ if [ ! -f "/installed" ]  ; then
    		#mysqladmin -u root password "${MYSQL_PASSWORD}"
         echo "GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY \"${MYSQL_PASSWORD}\"" | mysql
     else
-   		#mysqladmin -u root password "complemento"
-        echo "GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY \"complemento\"" | mysql
+   		#mysqladmin -u root password "ligero"
+        echo "GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY \"ligero\"" | mysql
     fi
 
     /etc/init.d/mysql stop

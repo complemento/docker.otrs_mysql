@@ -33,7 +33,7 @@ How to Run it
 
 `docker run -d --name otrs_db -v otrs_mysql:/var/lib/mysql ligero/otrs_mysql`
 
-This will start the server with a default "complemento" password for the root user.
+This will start the server with a default "ligero" password for the root user.
 
 If you want to set you own password when creating the server, you can run the following command:
 
