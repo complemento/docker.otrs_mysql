@@ -24,6 +24,9 @@ COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 COPY mysql.sh /opt/src/
 RUN chmod 755 /opt/src/mysql.sh
 
+# See Bug https://stackoverflow.com/questions/9083408/fatal-error-cant-open-and-lock-privilege-tables-table-mysql-host-doesnt-ex
+RUN chown -R mysql:mysql /var/lib/mysql
+
 EXPOSE 3306
 
 CMD ["/opt/src/mysql.sh"]

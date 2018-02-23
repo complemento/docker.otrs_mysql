@@ -1,6 +1,10 @@
 #!/bin/bash
 
+# See Bug https://stackoverflow.com/questions/9083408/fatal-error-cant-open-and-lock-privilege-tables-table-mysql-host-doesnt-ex
+chown -R mysql:mysql /var/lib/mysql
+
 if [ ! -f "/installed" ]  ; then
+
     ###### SysConfig defaults ##############
     /etc/init.d/mysql start
     

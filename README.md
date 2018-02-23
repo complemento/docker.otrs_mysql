@@ -38,3 +38,12 @@ This will start the server with a default "ligero" password for the root user.
 If you want to set you own password when creating the server, you can run the following command:
 
 `docker run -d --name otrs_db -v otrs_mysql:/var/lib/mysql -e MYSQL_PASSWORD=myownpassword ligero/otrs_mysql`
+
+
+Know BUGs
+---------------------------------------
+If your docker host is based on Ubuntu and already has a Mysql server installed, you may not be able to start your container because of Apparmor. In this case, please, check the following solution:
+
+https://github.com/moby/moby/issues/7512
+`sudo ln -s /etc/apparmor.d/usr.sbin.mysqld /etc/apparmor.d/disable/`
+`sudo apparmor_parser -R /etc/apparmor.d/usr.sbin.mysqld`
